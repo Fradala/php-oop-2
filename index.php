@@ -1,9 +1,14 @@
 <?php
 include_once __DIR__ . '/Models/Product.php';
 include_once __DIR__ . '/Models/Category.php';
+include_once __DIR__ . '/Models/Cuccia.php';
 
 $cani = new Category('Cane','Reparto per Cani');
 $gatti = new Category('Gatto','Reparto per Gatti');
+
+$cucciaCane = new Cuccia('Dormi','cuccia favolosa per cani', 30,'https://www.original-legno.com/wp-content/uploads/2021/06/Cucce_in_legno_italy_con_veranda_per_cani_in_4_misure-1.webp', '20x30','marrone', new Category('cani','cuccia'));
+$cucciaCane = new Cuccia('Dormi', 'cuccia favolosa per gatti', 20, 'https://media.adeo.com/marketplace/MKP/87472739/3e605ed47c9f621579548b1fb0ae6a56.jpeg?width=3000&height=3000&format=jpg&quality=80&fit=bounds', '15x20', 'blu', new Category('gatti','cuccia'));
+
 
 $cucciaDog = new Product('Cuccia', 'Nuova fantastica cuccia per il tuo cane', 30, 'https://www.original-legno.com/wp-content/uploads/2021/06/Cucce_in_legno_italy_con_veranda_per_cani_in_4_misure-1.webp', $cani);
 $cucciaCat = new Product('Cuccia', 'Nuova fantastica cuccia per il tuo gatto', 20, 'https://media.adeo.com/marketplace/MKP/87472739/3e605ed47c9f621579548b1fb0ae6a56.jpeg?width=3000&height=3000&format=jpg&quality=80&fit=bounds', $gatti );
@@ -51,6 +56,20 @@ $products = [ $cucciaCat, $cucciaDog, $crocchettecat, $crocchetteDog, $toyDog, $
                             <p class="card-text">
                                 <?php echo $product->description ?>
                             </p>
+                            <ul>
+                                <?php  foreach ($product as $chiave => $valore) {
+
+                                    // var_dump($valore);
+                                    if (is_a($valore, 'Category')){ ?>
+                                        <li>
+                                            <?php echo $chiave; ?>: <?php echo $valore->name; ?>
+                                        </li>
+                                    <?php } else { ?>
+                                        <li>
+                                            <?php echo $chiave; ?>: <?php echo $valore; ?>
+                                        </li>
+                                <?php }} ?>
+                            </ul>
                             
                            
                            

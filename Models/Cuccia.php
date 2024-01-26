@@ -6,6 +6,7 @@ class Cuccia extends Product{
     public $colore;
     
     
+    
 
     public function __construct(string $_name, string $_description, float $_price, $_imageUrl, $_dimensioni, $_colore)
     {
