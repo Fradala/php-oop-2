@@ -3,7 +3,7 @@ include_once __DIR__ . '/Models/Product.php';
 include_once __DIR__ . '/Models/Category.php';
 include_once __DIR__ . '/Models/Cuccia.php';
 include_once __DIR__ . '/Models/Cibo.php';
-
+include_once __DIR__ . '/Models/Gioco.php';
 
 
 $cani = new Category('Cane','Reparto per Cani');
@@ -25,10 +25,11 @@ $crocchetteDog = new Product('Crocchette','Crocchette per mantenere in forma il 
 $toyDog = new Product('Giocattolo','Gioco bellissimo per cani',11,'https://m.media-amazon.com/images/I/61Lnmx2BVFL.jpg', $cani);
 $toyCat = new Product('Giocattolo','Gioco bellissimo per gatti',5,'https://arcaplanet.vtexassets.com/arquivos/ids/266266/yes-gioco-con-pallina-per-gatti-intelligenza.jpg?v=637757821671330000', $gatti);
 
+$giocoCane = new Gioco('Acchiappa Palla', 'insegui la palla',11,'https://m.media-amazon.com/images/I/61Lnmx2BVFL.jpg','ottima qualità', new Category('cani', 'gioco per cani') );
+$giocoGatto = new Gioco('Acchiappa Palla', 'insegui la palla',5,'https://arcaplanet.vtexassets.com/arquivos/ids/266266/yes-gioco-con-pallina-per-gatti-intelligenza.jpg?v=637757821671330000','ottima qualità', new Category('gatti', 'gioco per gatti') );
 
 
-
-$products = [ $cucciaGatto, $cucciaCane, $crocchetteCane, $crocchetteGatto, $toyDog, $toyCat, ];
+$products = [ $cucciaGatto, $cucciaCane, $crocchetteCane, $crocchetteGatto, $giocoCane, $giocoGatto, ];
 
 ?>
 
