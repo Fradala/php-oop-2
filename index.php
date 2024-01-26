@@ -38,11 +38,9 @@ $products = [ $cuccia, $crocchette ];
                             <h5 class="card-title">
                                 <?php echo $product->name ?>
                             </h5>
-                            <h6 class="card-subtitle">
-                                <?php  ?>
-                            </h6>
+                            
                             <p class="card-text">
-                                <?php  ?>
+                                <?php echo $product->description ?>
                             </p>
                            
                            
