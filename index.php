@@ -1,16 +1,20 @@
 <?php
 include_once __DIR__ . '/Models/Product.php';
+include_once __DIR__ . '/Models/Category.php';
 
-$cucciaDog = new Product('Cuccia', 'Nuova fantastica cuccia per il tuo cane', 30, 'https://www.original-legno.com/wp-content/uploads/2021/06/Cucce_in_legno_italy_con_veranda_per_cani_in_4_misure-1.webp');
-$cucciaCat = new Product('Cuccia', 'Nuova fantastica cuccia per il tuo gatto', 20, 'https://media.adeo.com/marketplace/MKP/87472739/3e605ed47c9f621579548b1fb0ae6a56.jpeg?width=3000&height=3000&format=jpg&quality=80&fit=bounds' );
+$cani = new Category('Cane','Reparto per Cani');
+$gatti = new Category('Gatto','Reparto per Gatti');
 
-$crocchettecat = new Product('Crocchette','Crocchette per mantenere in forma il tuo gatto', 10, 'https://m.media-amazon.com/images/I/81OPuo+tbFL._AC_UF894,1000_QL80_.jpg');
-$crocchetteDog = new Product('Crocchette','Crocchette per mantenere in forma il tuo cane', 10, 'https://www.tigota.it/media/catalog/product/b/i/big_312471_842564_01_m5lcjqgamq6r7vgh.jpg?quality=60&fit=bounds&height=700&width=700&canvas=700:700');
+$cucciaDog = new Product('Cuccia', 'Nuova fantastica cuccia per il tuo cane', 30, 'https://www.original-legno.com/wp-content/uploads/2021/06/Cucce_in_legno_italy_con_veranda_per_cani_in_4_misure-1.webp', $cani);
+$cucciaCat = new Product('Cuccia', 'Nuova fantastica cuccia per il tuo gatto', 20, 'https://media.adeo.com/marketplace/MKP/87472739/3e605ed47c9f621579548b1fb0ae6a56.jpeg?width=3000&height=3000&format=jpg&quality=80&fit=bounds', $gatti );
 
-$toyDog = new Product('Giocattolo','Gioco bellissimo per cani',11,'https://m.media-amazon.com/images/I/61Lnmx2BVFL.jpg');
-$toyCat = new Product('Giocattolo','Gioco bellissimo per gatti',5,'https://arcaplanet.vtexassets.com/arquivos/ids/266266/yes-gioco-con-pallina-per-gatti-intelligenza.jpg?v=637757821671330000');
+$crocchettecat = new Product('Crocchette','Crocchette per mantenere in forma il tuo gatto', 10, 'https://m.media-amazon.com/images/I/81OPuo+tbFL._AC_UF894,1000_QL80_.jpg', $gatti);
+$crocchetteDog = new Product('Crocchette','Crocchette per mantenere in forma il tuo cane', 10, 'https://www.tigota.it/media/catalog/product/b/i/big_312471_842564_01_m5lcjqgamq6r7vgh.jpg?quality=60&fit=bounds&height=700&width=700&canvas=700:700', $cani);
 
-$products = [ $cucciaCat, $crocchetteDog, $toyDog, $toyCat, $cucciaDog, $crocchettecat ];
+$toyDog = new Product('Giocattolo','Gioco bellissimo per cani',11,'https://m.media-amazon.com/images/I/61Lnmx2BVFL.jpg', $cani);
+$toyCat = new Product('Giocattolo','Gioco bellissimo per gatti',5,'https://arcaplanet.vtexassets.com/arquivos/ids/266266/yes-gioco-con-pallina-per-gatti-intelligenza.jpg?v=637757821671330000', $gatti);
+
+$products = [ $cucciaCat, $cucciaDog, $crocchettecat, $crocchetteDog, $toyDog, $toyCat, ];
 
 ?>
 
