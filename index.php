@@ -51,6 +51,7 @@ $products = [ $cucciaCat, $cucciaDog, $crocchettecat, $crocchetteDog, $toyDog, $
                             <p class="card-text">
                                 <?php echo $product->description ?>
                             </p>
+                            
                            
                            
                             <a href="#" class="btn btn-primary">
